@@ -7,21 +7,27 @@
     <title>PDF Upload</title>
 </head>
 <body>
+    <section id="searchSavedSct">
     <h2>Search Saved</h2>
-    <label for="searchKeywords">Keywords</label><br>
-    <input type="text" name="searchKeywords" id="searchKeywords"><br>
+    <div id="searchBox">
+    <input type="text" name="searchKeywords" id="searchKeywords" placeholder="Search Keyword"><br>
     <button>Search</button>
+    </div>
+    </section>
 
+    <section id="uploadNewSct">
     <h2>Upload New</h2>
-    <label for="pdfUpload">Upload PDF</label><br>
     <input type="file" name="pdfUpload" id="pdfUpload"><br>
 
-    <label for="keywords">Keywords</label><br>
-    <input type="text" name="keywords" id="keywordsInput"><br>
-    <p id="printKeywords"></p>
+    <div id="enterKeyword">
+    <input type="text" name="keywords" id="keywordsInput" placeholder="Enter Keyword"><br>
     <button type="button" id="saveKeyword">Add</button>
+    </div>
 
-    <button type="submitAll" id="saveBtn">Save</button>
+    <p id="printKeywords"></p>
+
+    <button type="submitAll" id="saveBtn">Save to Files</button>
+    </section>
 
 
 

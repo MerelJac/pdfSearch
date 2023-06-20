@@ -24,7 +24,7 @@ saveBtn.addEventListener("click", function() {
     formData.append("file", pdfToUpload.value)
     console.log(...formData)
 
-    fetch('http://localhost:5500/server/uploads', {
+    fetch('http://localhost:2000/server/uploads', {
         method: "POST",
         body: formData
     })
