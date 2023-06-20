@@ -15,9 +15,20 @@ saveKeyword.addEventListener("click", function() {
     console.log(keywordArray);
 })
 
-var saveArray = [];
 saveBtn.addEventListener("click", function() {
-    saveArray.file = pdfToUpload.value;
-    saveArray.keywords = keywordArray;
-    console.log(saveArray)
+    const formData = new FormData();
+    for(var k = 0; k < keywordArray.length; k++) {
+        formData.append("keywords", keywordArray[k]);
+    }
+
+    formData.append("file", pdfToUpload.value)
+    console.log(...formData)
+
+    fetch('http://localhost:5500/server/uploads', {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
 })
+
