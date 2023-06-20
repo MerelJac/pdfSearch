@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles.css">
     <title>PDF Upload</title>
 </head>
 <body>
+    <h2>Search Saved</h2>
+    <label for="searchKeywords">Keywords</label><br>
+    <input type="text" name="searchKeywords" id="searchKeywords"><br>
+    <button>Search</button>
+
+    <h2>Upload New</h2>
     <label for="pdfUpload">Upload PDF</label><br>
     <input type="file" name="pdfUpload" id="pdfUpload"><br>
 
     <label for="keywords">Keywords</label><br>
     <input type="text" name="keywords" id="keywordsInput"><br>
+    <p id="printKeywords"></p>
     <button type="button" id="saveKeyword">Add</button>
 
     <button type="submitAll">Save</button>
+
+
+
+    <script src="./assets/script.js"></script>
 </body>
 </html>
