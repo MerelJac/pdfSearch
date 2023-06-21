@@ -1,0 +1,9 @@
+# tells GitHub to ignore these files 
+# always include these 3 things! 
+
+node_modules 
+# just so many things
+.DS_Store
+# macOS file that includes irrelevent data about the folder. not needed to be pushed to Git
+package-lock.json
+# all the unnessesary package.json files

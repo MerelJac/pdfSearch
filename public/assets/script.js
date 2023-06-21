@@ -32,3 +32,15 @@ saveBtn.addEventListener("click", function() {
     .then(data => console.log(data))
 })
 
+
+
+document.querySelector("#fake").addEventListener("click", (event) => {
+    event.preventDefault()
+    fetch("/taco").then(res => {
+        console.log(res)
+        return res.json()
+    }).then(data => {
+        console.log(data)
+        return data
+    })
+})
