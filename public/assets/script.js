@@ -15,32 +15,35 @@ saveKeyword.addEventListener("click", function() {
     console.log(keywordArray);
 })
 
+const savedData = [];
+localStorage.setItem('savedFiles', JSON.stringify(savedData));
+
 saveBtn.addEventListener("click", function() {
-    const formData = new FormData();
-    for(var k = 0; k < keywordArray.length; k++) {
-        formData.append("keywords", keywordArray[k]);
-    }
+    let fileName = document.querySelector('input[type="file"]').value;
+    var saveBundle = {
+        fileName: fileName,
+        keywords: keywordArray
+    };
 
-    formData.append("file", pdfToUpload.value)
-    console.log(...formData)
+    savedData.push(saveBundle);
+    localStorage.setItem('savedFiles', JSON.stringify(savedData));
 
-    fetch('http://localhost:2000/server/uploads', {
-        method: "POST",
-        body: formData
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
+    // clear page
+    keywordArray = [];
+    printSection.innerHTML = '';  
 })
 
-
-
-document.querySelector("#fake").addEventListener("click", (event) => {
-    event.preventDefault()
-    fetch("/taco").then(res => {
-        console.log(res)
-        return res.json()
-    }).then(data => {
-        console.log(data)
-        return data
-    })
+const searchKeywordBtn = document.querySelector('#searchKeyWrd');
+searchKeywordBtn.addEventListener('click', () => {
+    var searchQueryKeyWord = document.querySelector('#searchKeywords');
+    var searchTerm = searchQueryKeyWord.value;
+    var storedData = JSON.parse(localStorage.getItem('savedFiles'))
+    console.log(storedData)
+    for (var i = 0; i < storedData.length; i++) {
+        let keywordsToCheck = storedData[i].keywords;
+        let fileNameToCheck = storedData[i].fileName;      ;
+        if (keywordsToCheck.includes(searchTerm)) {
+            console.log('yay' + fileNameToCheck)
+        } else {console.log('nope' + fileNameToCheck)}
+    }
 })
