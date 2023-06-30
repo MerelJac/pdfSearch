@@ -15,8 +15,9 @@ saveKeyword.addEventListener("click", function() {
     console.log(keywordArray);
 })
 
-const savedData = [];
-localStorage.setItem('savedFiles', JSON.stringify(savedData));
+const savedData = JSON.parse(localStorage.getItem('savedFiles')) || [];
+// localStorage.setItem('savedFiles', JSON.stringify(savedData));
+console.log(savedData);
 
 saveBtn.addEventListener("click", function() {
     let fileName = document.querySelector('input[type="file"]').value;
@@ -25,6 +26,7 @@ saveBtn.addEventListener("click", function() {
         keywords: keywordArray
     };
 
+    console.log(savedData)
     savedData.push(saveBundle);
     localStorage.setItem('savedFiles', JSON.stringify(savedData));
 
