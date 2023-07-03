@@ -49,7 +49,7 @@ searchKeywordBtn.addEventListener('click', () => {
         let fileNameToCheck = storedData[i].fileName;
         console.log(fileNameToCheck);
         if (keywordsToCheck.includes(searchTerm)) {
-            eachSearch.innerHTML = `<a href="${fileNameToCheck}">${fileNameToCheck}</a><p>Keywords: ${keywordsToCheck}</p>`;
+            eachSearch.innerHTML = `<a href="${fileNameToCheck}">${fileNameToCheck}</a><p>Keywords: ${keywordsToCheck.join(', ')}</p>`;
             console.log(eachSearch);
             printPath.appendChild(eachSearch)
         } 
