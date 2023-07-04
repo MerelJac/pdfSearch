@@ -8,5 +8,5 @@ cloudinary.config({
 
 })
 
-cloudinary.uploader.upload
-console.log(cloudinary)
+// cloudinary.uploader.upload
+console.log(cloudinary.config())
