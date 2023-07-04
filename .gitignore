@@ -7,3 +7,4 @@ node_modules
 # macOS file that includes irrelevent data about the folder. not needed to be pushed to Git
 package-lock.json
 # all the unnessesary package.json files
+.env
