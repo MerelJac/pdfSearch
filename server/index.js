@@ -15,12 +15,12 @@ const requestListener = function(req, res) {
     res.end()
 }
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true}));
 
-app.post('/api', (request, response) => {
-    console.log(request)
-});
+// app.post('/api', (request, response) => {
+//     console.log(request)
+// });
 
 const server = http.createServer(requestListener);
 server.listen(port, host, () => {
@@ -30,7 +30,8 @@ server.listen(port, host, () => {
 
 
 cloudinary.config({ 
-        cloud_name: 'du1rn35uq', 
+        // cloud_name: 'du1rn35uq', 
+        cloud_name: process.env.CLOUDNAME, 
         api_key: '127717317775552', 
         api_secret: 'x6elcsw26HekfctU0w_rjstd7fY' 
 })
