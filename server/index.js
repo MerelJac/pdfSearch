@@ -5,7 +5,8 @@ const port = 8000;
 
 // should make .env process variables accessible 
 require('dotenv').config();
-const app = require('express');
+const express = require('express');
+const app = express();
 
 const html = 'https://www.instagram.com/images/instagram/xig/homepage/screenshots/screenshot4-2x.png?__d=www';
 
@@ -14,16 +15,18 @@ const requestListener = function(req, res) {
     res.end()
 }
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
+app.post('/api', (request, response) => {
+    console.log(request)
+});
 
 const server = http.createServer(requestListener);
 server.listen(port, host, () => {
     console.log(`Server is running on http://${host}:${port}`)
 })
 
-// server.post('/api', (request, response) => {
-//     console.log(request)
-// });
 
 
 cloudinary.config({ 

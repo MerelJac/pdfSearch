@@ -8,3 +8,5 @@
 ./server/package-lock.json
 # all the unnessesary package.json files
 .env
+
+./test.js
