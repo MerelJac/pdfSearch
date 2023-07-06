@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const saveKeyword = document.querySelector("#saveKeyword");
 let keywordInput = document.querySelector("#keywordsInput");
 const printSection = document.querySelector("#printKeywords");
@@ -20,6 +22,8 @@ saveKeyword.addEventListener("click", function() {
 
 const savedData = JSON.parse(localStorage.getItem('savedFiles')) || [];
 
+
+
 saveBtn.addEventListener("click", function() {
     let fileName = document.querySelector('input[type="file"]').value;
     var saveBundle = {
@@ -31,10 +35,20 @@ saveBtn.addEventListener("click", function() {
     savedData.push(saveBundle);
     localStorage.setItem('savedFiles', JSON.stringify(savedData));
 
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(saveBundle)
+
+    };
+    fetch('/api', options);
+    
     // clear page
     keywordArray = [];
-    printSection.innerHTML = '';  
+    printSection.innerHTML = ''; 
+
 })
+
 
 const searchKeywordBtn = document.querySelector('#searchKeyWrd');
 searchKeywordBtn.addEventListener('click', () => {
