@@ -1,0 +1,6 @@
+body {
+    padding: 10px;
+}
+#enterKeyword, #searchBox {
+    display: flex;
+}

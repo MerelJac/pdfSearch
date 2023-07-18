@@ -10,3 +10,4 @@ server/package-lock.json
 server/.env
 
 .env
+backup.js
