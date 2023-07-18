@@ -4,8 +4,8 @@ const printSection = document.querySelector("#printKeywords");
 const saveBtn = document.querySelector("#saveBtn");
 const pdfToUpload = document.querySelector("#pdfUpload");
 
-const printPath = document.createElement('section');
-document.body.appendChild(printPath);
+const api_key_cloudinary = '127717317775552';
+const cloud_name = 'du1rn35uq';
 
 keywordArray = [];
 saveKeyword.addEventListener("click", function() {
@@ -21,30 +21,41 @@ saveKeyword.addEventListener("click", function() {
 
 const savedData = JSON.parse(localStorage.getItem('savedFiles')) || [];
 
+// initalizes the widget in memory
+var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'du1rn35uq',
+    uploadPreset: 'pdfSearch'
+}, (error, result) => {
+if (!error && result && result.event === 'success'){
+    console.log("Done! Here is the image info: ", result.info)
+} else {console.error(error)}})
 
+document.querySelector('.cloudinary-button').addEventListener('click', function() {
+    myWidget.open()
+}, false);
 
-saveBtn.addEventListener("click", function() {
-    let fileName = document.querySelector('input[type="file"]').value;
-    var saveBundle = {
-        fileName: fileName,
-        keywords: keywordArray
-    };
+// saveBtn.addEventListener("click", function() {
+//     let fileName = document.querySelector('input[type="file"]').value;
 
-    console.log(savedData)
-    savedData.push(saveBundle);
-    localStorage.setItem('savedFiles', JSON.stringify(savedData));
+//     var saveBundle = {
+//         fileName: fileName,
+//         keywords: keywordArray
+//     };
 
-    const options = {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(saveBundle)
+//     console.log(savedData)
+//     savedData.push(saveBundle);
+//     localStorage.setItem('savedFiles', JSON.stringify(savedData));
 
-    };
+//     const options = {
+//         method: 'POST',
+//         headers: {'Content-Type': 'application/json'},
+//         body: JSON.stringify(saveBundle)
+
+//     };
     
-    fetch('/api', options);
-    
-    // clear page
-    keywordArray = [];
-    printSection.innerHTML = ''; 
+//     // clear page
+//     keywordArray = [];
+//     printSection.innerHTML = ''; 
 
-})
+// })
+
