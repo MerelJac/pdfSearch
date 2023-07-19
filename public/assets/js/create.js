@@ -46,6 +46,7 @@ function generateUniqueId() {
     return result.join('')
   }
 
+// save bundle of information and post to server
 let saveBundle;
 saveBtn.addEventListener("click", function() {
     var saveBundle = {
@@ -56,7 +57,6 @@ saveBtn.addEventListener("click", function() {
 
     console.log(saveBundle);
 
-    (saveBundle) =>
     fetch('/api/data', {
       method: 'POST',
       headers: {
@@ -65,6 +65,7 @@ saveBtn.addEventListener("click", function() {
       body: JSON.stringify(saveBundle),
     }).then((response) => response.json())
     .then((data) => console.log(data))
+    .catch((error) => console.error(error))
     
     // clear page
     keywordArray = [];
