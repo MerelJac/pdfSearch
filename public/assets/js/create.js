@@ -7,19 +7,17 @@ const pdfToUpload = document.querySelector("#pdfUpload");
 const api_key_cloudinary = '127717317775552';
 const cloud_name = 'du1rn35uq';
 
+let pdfURL;
+
 keywordArray = [];
 saveKeyword.addEventListener("click", function() {
     let keyword = keywordInput.value;
-    console.log(keyword)
     if (!keywordArray.includes(keyword)) {
         keywordArray.push(keyword)
     }
     printSection.innerHTML = keywordArray.join(", ");
     keywordInput.value = "";
-    console.log(keywordArray);
 })
-
-const savedData = JSON.parse(localStorage.getItem('savedFiles')) || [];
 
 // initalizes the widget in memory
 var myWidget = cloudinary.createUploadWidget({
@@ -27,35 +25,50 @@ var myWidget = cloudinary.createUploadWidget({
     uploadPreset: 'pdfSearch'
 }, (error, result) => {
 if (!error && result && result.event === 'success'){
-    console.log("Done! Here is the image info: ", result.info)
+    console.log("Done! Here is the image info: ", result.info);
+    pdfURL = result.info.secure_url;
+    console.log(pdfURL)
 } else {console.error(error)}})
 
 document.querySelector('.cloudinary-button').addEventListener('click', function() {
     myWidget.open()
 }, false);
 
-// saveBtn.addEventListener("click", function() {
-//     let fileName = document.querySelector('input[type="file"]').value;
+// generate unique ID function 
+function generateUniqueId() {
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const result = [];
+    for (var i = 0; i < 10; i++) {
+      let randomIndex = Math.floor(Math.random() * characters.length );
+      let randomCharacter = characters.charAt(randomIndex);
+      result.push(randomCharacter)
+    }
+    return result.join('')
+  }
 
-//     var saveBundle = {
-//         fileName: fileName,
-//         keywords: keywordArray
-//     };
+let saveBundle;
+saveBtn.addEventListener("click", function() {
+    var saveBundle = {
+        id: generateUniqueId(),
+        fileName: pdfURL,
+        keywords: keywordArray,
+    };
 
-//     console.log(savedData)
-//     savedData.push(saveBundle);
-//     localStorage.setItem('savedFiles', JSON.stringify(savedData));
+    console.log(saveBundle);
 
-//     const options = {
-//         method: 'POST',
-//         headers: {'Content-Type': 'application/json'},
-//         body: JSON.stringify(saveBundle)
-
-//     };
+    (saveBundle) =>
+    fetch('/api/data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(saveBundle),
+    }).then((response) => response.json())
+    .then((data) => console.log(data))
     
-//     // clear page
-//     keywordArray = [];
-//     printSection.innerHTML = ''; 
+    // clear page
+    keywordArray = [];
+    printSection.innerHTML = ''; 
 
-// })
+})
 
