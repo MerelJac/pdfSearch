@@ -4,3 +4,7 @@ body {
 #enterKeyword, #searchBox {
     display: flex;
 }
+
+.pdfProof {
+    width: 100px;
+}

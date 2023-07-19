@@ -27,8 +27,13 @@ var myWidget = cloudinary.createUploadWidget({
 if (!error && result && result.event === 'success'){
     console.log("Success");
     pdfURL = result.info.secure_url;
+    const img = document.createElement('img');
+    img.classList.add('pdfProof');
+    img.src = pdfURL;
+    document.body.appendChild(img);
     console.log(pdfURL)
 } else {console.error(error)}})
+
 
 document.querySelector('.cloudinary-button').addEventListener('click', function() {
     myWidget.open()
