@@ -25,7 +25,7 @@ var myWidget = cloudinary.createUploadWidget({
     uploadPreset: 'pdfSearch'
 }, (error, result) => {
 if (!error && result && result.event === 'success'){
-    console.log("Done! Here is the image info: ", result.info);
+    console.log("Success");
     pdfURL = result.info.secure_url;
     console.log(pdfURL)
 } else {console.error(error)}})

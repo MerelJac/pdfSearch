@@ -3,7 +3,12 @@ const app = express();
 const path = require('path');
 const PORT = 3000;
 let db = require('./db/data.json')
+const bodyParser = require('body-parser');
+const fs = require('fs');
 
+// middleware 
+app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.static('./public'));
 
 app.get('/create', (req, res) => {
