@@ -5,6 +5,7 @@ const saveBtn = document.querySelector("#saveBtn");
 const pdfToUpload = document.querySelector("#pdfUpload");
 const notesAddBtn = document.querySelector('#saveNotes');
 const noteTextArea = document.querySelector('#notesText');
+const printNoteSection =  document.querySelector('#printNotes');
 
 const api_key_cloudinary = '127717317775552';
 const cloud_name = 'du1rn35uq';
@@ -57,8 +58,10 @@ let recordedNotes = [];
 notesAddBtn.addEventListener('click', () => {
   let noteText = noteTextArea.value;
   recordedNotes.push(noteText);
-  document.querySelector('#printNotes').innerHTML += noteText;
+  printNoteSection.innerHTML += noteText;
   noteTextArea.value = '';
+
+
 })
 
 // save bundle of information and post to server
@@ -86,6 +89,7 @@ saveBtn.addEventListener("click", function() {
     // clear page
     keywordArray = [];
     printSection.innerHTML = ''; 
+    printNoteSection.innerHTML = "";
 
 })
 

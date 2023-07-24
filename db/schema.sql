@@ -10,7 +10,8 @@ CREATE TABLE savedData (
 
 CREATE TABLE keywords (
     id INT NOT NULL, 
-    keyword
+    keyword,
+    notes,
     file_id INT NOT NULL
     FOREIGN KEY (file_id) REFERENCES savedData(id)
 )
