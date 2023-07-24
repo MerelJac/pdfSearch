@@ -1,6 +1,29 @@
+* {
+    padding: 10px;
+    margin: 10px;
+    background-color: #AB8C77;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    background-color: antiquewhite;
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+
 body {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
 #enterKeyword, #searchBox {
     display: flex;
 }
