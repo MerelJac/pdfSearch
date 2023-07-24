@@ -1,5 +1,15 @@
-body {
+* {
     padding: 10px;
+    margin: 10px;
+    background-color: #AB8C77;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #enterKeyword, #searchBox {
     display: flex;
@@ -7,4 +17,70 @@ body {
 
 .pdfProof {
     width: 100px;
+}
+
+a {
+    text-decoration: none;
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 20px;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+#uploadNewSct {
+    display: flex;
+    flex-direction: column;
+}
+
+.cloudinary-button {
+        text-decoration: none;
+        background-color: antiquewhite !important;
+        color: black !important;
+        padding: 30px !important;
+        border: none;
+        border-radius: 20px !important;
+        min-width: 200px;
+        display: flex !important;
+        justify-content: center !important;
+}
+
+#saveKeyword, #saveNotes {
+    text-decoration: none;
+    background-color: antiquewhite !important;
+    color: black !important;
+    padding: 30px !important;
+    border: none;
+    border-radius: 20px !important;
+    max-width: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#saveBtn {
+    border: none;
+    text-decoration: none;
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 20px;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+input[type=text] {
+    background-color: antiquewhite;
+    color: black;
+    padding: 30px;
+    border: none;
+    border-radius: 20px;
+}
+
+#keywordsInput, #notesText {
+    width: 100px
+}
+#notesSection {
+    display: flex;
+    flex-direction: row;
 }
