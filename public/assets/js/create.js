@@ -3,6 +3,8 @@ let keywordInput = document.querySelector("#keywordsInput");
 const printSection = document.querySelector("#printKeywords");
 const saveBtn = document.querySelector("#saveBtn");
 const pdfToUpload = document.querySelector("#pdfUpload");
+const notesAddBtn = document.querySelector('#saveNotes');
+const noteTextArea = document.querySelector('#notesText');
 
 const api_key_cloudinary = '127717317775552';
 const cloud_name = 'du1rn35uq';
@@ -51,6 +53,14 @@ function generateUniqueId() {
     return result.join('')
   }
 
+let recordedNotes = [];
+notesAddBtn.addEventListener('click', () => {
+  let noteText = noteTextArea.value;
+  recordedNotes.push(noteText);
+  document.querySelector('#printNotes').innerHTML += noteText;
+  noteTextArea.value = '';
+})
+
 // save bundle of information and post to server
 let saveBundle;
 saveBtn.addEventListener("click", function() {
@@ -58,6 +68,7 @@ saveBtn.addEventListener("click", function() {
         id: generateUniqueId(),
         fileName: pdfURL,
         keywords: keywordArray,
+        notes: recordedNotes
     };
 
     console.log(saveBundle);

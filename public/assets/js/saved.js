@@ -5,6 +5,7 @@ const saveBtn = document.querySelector("#saveBtn");
 const searchArea = document.querySelector('#searchBox');
 const pdfToUpload = document.querySelector("#pdfUpload");
 
+
 const printPath = document.createElement('section');
 searchArea.append(printPath);
 
@@ -16,7 +17,6 @@ searchKeywordBtn.addEventListener('click', () => {
     var searchQueryKeyWord = document.querySelector('#searchKeywords');
     var searchTerm = searchQueryKeyWord.value;
     var storedData = JSON.parse(localStorage.getItem('savedFiles'))
- 
     for (var i = 0; i < storedData.length; i++) {
         let keywordsToCheck = storedData[i].keywords;
         let fileNameToCheck = storedData[i].fileName;
@@ -31,3 +31,14 @@ searchKeywordBtn.addEventListener('click', () => {
 
     }
 })
+
+
+fetch('api/data')
+  .then(response => response.json())
+  .then(data => {
+    // Work with the loaded JSON data here
+    console.log(data);
+  })
+  .catch(error => {
+    console.log('Error loading data:', error);
+  });

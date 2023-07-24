@@ -12,11 +12,18 @@ app.use(bodyParser.json());
 app.use(express.static('./public'));
 
 app.get('/create', (req, res) => {
-    res.sendFile(__dirname + '/public/create.html')
+    console.log(res.sendFile(__dirname + '/public/create.html'))
 })
 
 app.get('/saved', (req, res) => {
     res.sendFile(__dirname + '/public/saved.html')
+})
+
+app.get('/api/data', (req, res) => {
+    
+    res.status(200).json({message: `success`});
+
+    console.log('api found')
 })
 
 app.post('/api/data', (req, res) => {
@@ -26,6 +33,10 @@ app.post('/api/data', (req, res) => {
         res.status(200).json({message: "Note successfully posted", data: db});
       });
 })
+
+// app.listen(PORT, () = {
+//     db.query( `SELECT * FROM students`, function )
+// })
 
 app.listen(PORT, () => {
     console.log(`app listening on http://localhost:${PORT}`)
