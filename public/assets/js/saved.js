@@ -59,7 +59,7 @@ data.forEach(entry => {
   keywordP.innerHTML += entry.keywords;
 
   const notesP = document.createElement('p');
-  notesP.innerHTML += entry.notesP;
+  notesP.innerHTML += entry.notes;
 
 
   newDiv.appendChild(fileP);

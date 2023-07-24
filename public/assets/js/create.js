@@ -9,6 +9,7 @@ const printNoteSection =  document.querySelector('#printNotes');
 
 const api_key_cloudinary = '127717317775552';
 const cloud_name = 'du1rn35uq';
+recordedNotes = [];
 
 let pdfURL;
 
@@ -30,10 +31,11 @@ var myWidget = cloudinary.createUploadWidget({
 if (!error && result && result.event === 'success'){
     console.log("Success");
     pdfURL = result.info.secure_url;
-    const img = document.createElement('img');
-    img.classList.add('pdfProof');
-    img.src = pdfURL;
-    document.body.appendChild(img);
+    // not producing proofs of PDFs
+    // const img = document.createElement('img');
+    // img.classList.add('pdfProof');
+    // img.src = pdfURL;
+    // document.body.appendChild(img);
     console.log(pdfURL)
 } else {console.error(error)}})
 
@@ -54,7 +56,6 @@ function generateUniqueId() {
     return result.join('')
   }
 
-let recordedNotes = [];
 notesAddBtn.addEventListener('click', () => {
   let noteText = noteTextArea.value;
   recordedNotes.push(noteText);
