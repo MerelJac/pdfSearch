@@ -46,30 +46,63 @@ fetch('/api/data')
     console.log('Error loading data:', error);
   });
 
+
 function outputData(data) {
-console.log(data)
-data.forEach(entry => { 
-  let newDiv = document.createElement('div');
-  newDiv.classList.add('row');
+  console.log(data)
 
-  const fileP = document.createElement('p');
-  fileP.innerHTML += entry.fileName;
-
-  const keywordP = document.createElement('p');
-  keywordP.innerHTML += entry.keywords;
-
-  const notesP = document.createElement('p');
-  notesP.innerHTML += entry.notes;
+  const headerThead = document.createElement('tr');
+  headerThead.classList.add('thread');
 
 
-  newDiv.appendChild(fileP);
-  newDiv.appendChild(keywordP)
-  newDiv.appendChild(notesP);
+  const fileLine = document.createElement('td');
+  fileLine.classList.add('list');
+  fileLine.textContent = 'FILE PATH'
 
-  printSection.append(newDiv);
 
-  console.log(entry.id);
+  const keywordLine = document.createElement('td');
+  keywordLine.classList.add('list');
+  keywordLine.textContent = 'KEYWORDS';
+
+  const notesLine = document.createElement('td');
+  notesLine.classList.add('list');
+  notesLine.textContent = 'NOTES';
+
+  headerThead.append(keywordLine);
+  headerThead.append(notesLine);
+  headerThead.append(fileLine);
+
+  resultsSection.appendChild(headerThead)
+
+  data.forEach(entry => { 
+    console.log(entry);
+
+    const eachThread = document.createElement('tr');
+    eachThread.classList.add('thread');
+
+
+    const fileLineData = document.createElement('a');
+    // fileLine.setAttribute('scope', 'row');
+  
+    fileLineData.setAttribute('href', entry.fileName);
+    fileLineData.textContent = 'Link';
+
+
+
+
+
+    const keywordLineData = document.createElement('td');
+    // keywordLine.setAttribute('scope', 'col');
+    keywordLineData.textContent = entry.keywords.join(', ');
+
+    const notesLineData = document.createElement('td');
+    // notesLine.setAttribute('scope', 'col');
+    notesLineData.textContent =  entry.notes;
+
+    keywordLine.appendChild(keywordLineData);
+    notesLine.appendChild(notesLineData);
+    fileLine.appendChild(fileLineData);
+
 
 });
-  // printSection.innerHTML += data;
+
 }
