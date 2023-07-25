@@ -28,6 +28,15 @@ The application is designed with flexibility in mind and can be customized accor
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Future Developments
+
+The PDF Search Application can be further enhanced with the following features:
+
+1. ** Editing Saved Files: Allow users to edit the information associated with the saved files. This includes the ability to modify keywords, update notes, or change the URL of the saved file. Implementing this feature would provide users with more flexibility and adaptability in managing their saved data.
+
+2. ** Deleting Saved Files: Implement a feature that allows users to delete saved files from their history. By providing a convenient way to remove unwanted or outdated records, users can keep their search results more relevant and declutter their data.
+
+
 ## Acknowledgments
 
 We extend our gratitude to Cloudinary for their invaluable services, making it possible to enhance the functionality and security of this application.
