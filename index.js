@@ -35,7 +35,6 @@ app.post('/api/data', (req, res) => {
         res.status(200).json({message: "Note successfully posted", data: db});
       });
 })
-
 // read raw data.json file
 let rawData = fs.readFileSync('db/data.json');
 let data = JSON.parse(rawData)
