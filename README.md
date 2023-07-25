@@ -12,13 +12,61 @@ The Picture Search Application is a web-based tool designed to help developers s
 
 ## Usage
 
-1. **Accessing the Application**: To access the Picture Search Application, contact via [email](mailto:merel.burleigh@gmail.com)
+1. **Accessing the Application**: To access the Picture Search Application, contact via [email](mailto:merel.burleigh@gmail.com).
 
 2. **Password Protection**: The application is password-protected to ensure confidentiality and data security. Developers need to provide the appropriate credentials to log in and access the features.
 
 3. **Saving Picture Links and Keywords**: Once logged in, developers can input links to pictures and images and associate them with relevant keywords. Additionally, developers can add notes for further context.
 
 4. **Uploading to Cloudinary**: After saving the picture link and associated data, developers can use the Cloudinary uploader widget to upload the image to their Cloudinary account securely.
+
+## Installation
+
+To run the Picture Search Application locally, follow these steps:
+
+1. Create an account with Cloudinary and download the code via ZIP file. 
+
+2. Install the required npm packages:
+
+```
+npm install
+```
+
+3. Set Up Cloudinary Information:
+
+   - Sign up for a Cloudinary account at https://cloudinary.com/
+   - Obtain your Cloudinary API key and secret from the Cloudinary dashboard.
+   - Replace the placeholder values in the application code with your Cloudinary API key and secret.
+
+## Usage
+
+To start the application, run the following command:
+
+```
+npm start
+```
+
+The Picture Search Application will be accessible at `http://localhost:3000` in your web browser.
+
+## Deploy with Node.js
+
+To deploy the Picture Search Application, you can use Node.js and a hosting platform of your choice. Here's a general outline of the deployment process:
+
+1. Set up a server or hosting environment for Node.js application deployment.
+
+2. Install Node.js and npm on the server.
+
+3. Clone the repository on the server.
+
+4. Install the required npm packages using `npm install`.
+
+5. Set up the Cloudinary information as described in the "Installation" section.
+
+6. Start the application using a process manager like PM2.
+
+7. Set up a reverse proxy or configure DNS to route traffic to the application.
+
+Please refer to the documentation of your hosting platform for specific deployment instructions.
 
 ## Future Developments
 
@@ -42,4 +90,3 @@ We extend our gratitude to Cloudinary for their invaluable services, making it p
 
 For any questions, feedback, or issues related to the application, please feel free to reach out to the project maintainer.
 
-Thank you for using the Picture Search Application!

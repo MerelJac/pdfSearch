@@ -25,24 +25,6 @@ searchKeywordBtn.addEventListener('click', () => {
       console.log(filteredData);
     
     })
-    // const eachSearch = document.createElement('div');
-    // printPath.innerHTML = '';
-    // var searchQueryKeyWord = document.querySelector('#searchKeywords');
-    // var searchTerm = searchQueryKeyWord.value;
-    // var storedData = JSON.parse(localStorage.getItem('savedFiles'))
-    // for (var i = 0; i < storedData.length; i++) {
-    //     let keywordsToCheck = storedData[i].keywords;
-    //     let fileNameToCheck = storedData[i].fileName;
-    //     console.log(fileNameToCheck);
-
-    //     if (keywordsToCheck.includes(searchTerm)) {
-    //         eachSearch.innerHTML = `<a href="${fileNameToCheck}">${fileNameToCheck}</a><p>Keywords: ${keywordsToCheck.join(', ')}</p>`;
-    //         console.log(eachSearch);
-    //         printPath.appendChild(eachSearch)
-    //     } 
-    //     else {eachSearch.innerHTML = `<p>Search again</p>`}
-
-    // }
 
 
 })
@@ -62,36 +44,13 @@ fetch('/api/data')
 
 
 function outputData(data) {
-  console.log(data)
-
-  const headerThead = document.createElement('tr');
-  headerThead.classList.add('thread');
-
-
-  const fileLine = document.createElement('td');
-  fileLine.classList.add('list');
-  fileLine.textContent = 'FILE PATH'
-
-
-  const keywordLine = document.createElement('td');
-  keywordLine.classList.add('list');
-  keywordLine.textContent = 'KEYWORDS';
-
-  const notesLine = document.createElement('td');
-  notesLine.classList.add('list');
-  notesLine.textContent = 'NOTES';
-
-  headerThead.append(keywordLine);
-  headerThead.append(fileLine);
-  headerThead.append(notesLine);
-
-  resultsSection.appendChild(headerThead)
-
   data.forEach(entry => { 
     console.log(entry);
 
     const eachThread = document.createElement('tr');
     eachThread.classList.add('thread');
+    eachThread.classList.add('row');
+
 
 
     const fileLineData = document.createElement('a');
@@ -112,9 +71,11 @@ function outputData(data) {
     // notesLine.setAttribute('scope', 'col');
     notesLineData.textContent =  entry.notes;
 
-    keywordLine.appendChild(keywordLineData);
-    notesLine.appendChild(notesLineData);
-    fileLine.appendChild(fileLineData);
+    eachThread.appendChild(keywordLineData);
+    eachThread.appendChild(notesLineData);
+    eachThread.appendChild(fileLineData);
+
+    resultsSection.appendChild(eachThread)
 
 
 });

@@ -17,6 +17,11 @@ td {
     margin-left: 0;
     padding-left: 0;
     background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    justify-content: start;
+    align-items: start;
 }
 
 #resultsSection {
@@ -43,12 +48,12 @@ td {
 
 a {
     text-decoration: none;
-    /* background-color: antiquewhite; */
     padding: 10px;
     border-radius: 20px;
     min-width: 40px;
     display: flex;
     justify-content: center;
+    max-height: 20px;
 }
 
 body {
@@ -65,12 +70,14 @@ body {
     justify-content: center;
 }
 
+
+
 tr {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     background-color: transparent;
 }
+
 input[type=text] {
     background-color: antiquewhite;
     color: black;
