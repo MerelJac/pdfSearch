@@ -15,7 +15,7 @@ let pdfURL;
 
 keywordArray = [];
 saveKeyword.addEventListener("click", function() {
-    let keyword = keywordInput.value;
+    let keyword = keywordInput.value || "";
     if (!keywordArray.includes(keyword)) {
         keywordArray.push(keyword)
     }
@@ -58,7 +58,7 @@ function generateUniqueId() {
 
 
 notesAddBtn.addEventListener('click', () => {
-  let noteText = noteTextArea.value;
+  let noteText = noteTextArea.value || "";
   recordedNotes.push(noteText);
   printNoteSection.innerHTML += '';
   printNoteSection.innerHTML = recordedNotes.join(", ");
