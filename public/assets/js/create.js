@@ -31,12 +31,12 @@ var myWidget = cloudinary.createUploadWidget({
 if (!error && result && result.event === 'success'){
     console.log("Success");
     pdfURL = result.info.secure_url;
-    // not producing proofs of PDFs
+    // // not producing proofs of PDFs
     // const img = document.createElement('img');
     // img.classList.add('pdfProof');
     // img.src = pdfURL;
     // document.body.appendChild(img);
-    console.log(pdfURL)
+    // console.log(pdfURL)
 } else {console.error(error)}})
 
 
@@ -56,12 +56,13 @@ function generateUniqueId() {
     return result.join('')
   }
 
+
 notesAddBtn.addEventListener('click', () => {
   let noteText = noteTextArea.value;
   recordedNotes.push(noteText);
-  printNoteSection.innerHTML += noteText;
+  printNoteSection.innerHTML += '';
+  printNoteSection.innerHTML = recordedNotes.join(", ");
   noteTextArea.value = '';
-
 
 })
 

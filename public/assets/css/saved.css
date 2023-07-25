@@ -20,7 +20,6 @@ td {
 }
 
 #resultsSection {
-    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -32,7 +31,7 @@ td {
     background-color: antiquewhite;
     height: 100vh;
     width: 70vw;
-    box-shadow: 3px 10px 10px silver;
+    box-shadow: 3px 10px 10px antiquewhite;
     padding: 10px;
     border-radius: 20px;
 }
