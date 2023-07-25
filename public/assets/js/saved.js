@@ -12,7 +12,19 @@ const printSection = document.querySelector('#resultsSection')
 
 const searchKeywordBtn = document.querySelector('#searchKeyWrd');
 searchKeywordBtn.addEventListener('click', () => {
-    console.log('clicked')
+    var searchQueryKeyWord = document.querySelector('#searchKeywords');
+    var searchTerm = searchQueryKeyWord.value;
+    console.log('clicked');
+    fetch('/api/data')
+    .then(response => response.json())
+    .then(data => {
+      let dataPulled = data.data;
+      const filteredData = dataPulled.filter(record => record.keywords.includes(searchTerm));
+      resultsSection.innerHTML = '';
+      outputData(filteredData);
+      console.log(filteredData)
+    
+    })
     // const eachSearch = document.createElement('div');
     // printPath.innerHTML = '';
     // var searchQueryKeyWord = document.querySelector('#searchKeywords');
@@ -31,6 +43,8 @@ searchKeywordBtn.addEventListener('click', () => {
     //     else {eachSearch.innerHTML = `<p>Search again</p>`}
 
     // }
+
+
 })
 
 let parsedData;
