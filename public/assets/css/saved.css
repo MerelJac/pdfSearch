@@ -71,7 +71,19 @@ body {
 }
 
 
+.transparent {
+    background-color: transparent;
+}
 
+.header {
+    padding: 0;
+    line-height: 0;
+    margin: 0;
+}
+
+th {
+    background-color: transparent;
+}
 tr {
     display: flex;
     justify-content: space-between;
@@ -84,6 +96,8 @@ input[type=text] {
     padding: 30px;
     border: none;
     border-radius: 20px;
+    width: 52vw;
+
 }
 
 .list {

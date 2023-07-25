@@ -10,6 +10,9 @@ The Picture Search Application is a web-based tool designed to help developers s
 
 - **Cloudinary Integration**: The application integrates with Cloudinary's uploader widget, enabling developers to upload and store images on their Cloudinary account securely.
 
+## Link to Video Tutorial
+[Watch Here](https://watch.screencastify.com/v/q5G0veWCSdnOr7oaOaDs)
+
 ## Usage
 
 1. **Accessing the Application**: To access the Picture Search Application, contact via [email](mailto:merel.burleigh@gmail.com).
