@@ -14,14 +14,21 @@ html {
 #enterKeyword, #searchBox {
     display: flex;
 }
+#printKeywords, #printNotes, #enterKeyword, #notesSection {
+    background-color: transparent;
+}
 
+#enterKeyword, #notesSection {
+    display: flex;
+    justify-content: center;
+}
 .pdfProof {
     width: 100px;
 }
 
 a {
     text-decoration: none;
-    background-color: antiquewhite;
+    background-color: transparent;
     padding: 10px;
     border-radius: 20px;
     min-width: 200px;
@@ -32,11 +39,18 @@ a {
 #uploadNewSct {
     display: flex;
     flex-direction: column;
+    background-color: antiquewhite;
+    height: 100vh;
+    width: 70vw;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 3px 10px 10px silver;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .cloudinary-button {
         text-decoration: none;
-        background-color: antiquewhite !important;
+        background-color: #AB8C77 !important;
         color: black !important;
         padding: 30px !important;
         border: none;
@@ -48,7 +62,7 @@ a {
 
 #saveKeyword, #saveNotes {
     text-decoration: none;
-    background-color: antiquewhite !important;
+    background-color: AB8C77 !important;
     color: black !important;
     padding: 30px !important;
     border: none;
@@ -61,7 +75,7 @@ a {
 #saveBtn {
     border: none;
     text-decoration: none;
-    background-color: antiquewhite;
+    background-color: AB8C77;
     padding: 10px;
     border-radius: 20px;
     min-width: 200px;
@@ -70,7 +84,7 @@ a {
 }
 
 input[type=text] {
-    background-color: antiquewhite;
+    background-color: AB8C77;
     color: black;
     padding: 30px;
     border: none;
@@ -78,7 +92,7 @@ input[type=text] {
 }
 
 #keywordsInput, #notesText {
-    width: 100px
+    width: 100%;
 }
 #notesSection {
     display: flex;

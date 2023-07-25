@@ -16,6 +16,7 @@ body {
 td {
     margin-left: 0;
     padding-left: 0;
+    background-color: transparent;
 }
 
 #resultsSection {
@@ -25,6 +26,15 @@ td {
     overflow: scroll;
     width: 90%;
     border-radius: 20px 20px 0px 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    height: 100vh;
+    width: 70vw;
+    box-shadow: 3px 10px 10px silver;
+    padding: 10px;
+    border-radius: 20px;
 }
 .row {
     display: flex;
@@ -34,7 +44,7 @@ td {
 
 a {
     text-decoration: none;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     padding: 10px;
     border-radius: 20px;
     min-width: 40px;
@@ -59,6 +69,8 @@ body {
 tr {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
 }
 input[type=text] {
     background-color: antiquewhite;

@@ -22,7 +22,7 @@ searchKeywordBtn.addEventListener('click', () => {
       const filteredData = dataPulled.filter(record => record.keywords.includes(searchTerm));
       resultsSection.innerHTML = '';
       outputData(filteredData);
-      console.log(filteredData)
+      console.log(filteredData);
     
     })
     // const eachSearch = document.createElement('div');
@@ -82,8 +82,8 @@ function outputData(data) {
   notesLine.textContent = 'NOTES';
 
   headerThead.append(keywordLine);
-  headerThead.append(notesLine);
   headerThead.append(fileLine);
+  headerThead.append(notesLine);
 
   resultsSection.appendChild(headerThead)
 
