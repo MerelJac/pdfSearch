@@ -1,6 +1,6 @@
 # Picture Search Application
 
-The Picture Search Application is a web-based tool designed to help developers save and organize links to pictures and images with associated keywords. This application enables developers to quickly reference relevant images, add notes or additional keywords, and easily sort their picture collection for efficient project management. The application is password-protected to ensure data security and privacy.
+The Picture Search Application is a web-based tool designed to help developers save and organize links to pictures and images with associated keywords. This application enables developers to quickly reference relevant images, add notes or additional keywords, and easily sort their picture collection for efficient project management. 
 
 ## Key Features
 
@@ -17,11 +17,9 @@ The Picture Search Application is a web-based tool designed to help developers s
 
 1. **Accessing the Application**: To access the Picture Search Application, contact via [email](mailto:merel.burleigh@gmail.com).
 
-2. **Password Protection**: The application is password-protected to ensure confidentiality and data security. Developers need to provide the appropriate credentials to log in and access the features.
+2. **Saving Picture Links and Keywords**: Once logged in, developers can input links to pictures and images and associate them with relevant keywords. Additionally, developers can add notes for further context.
 
-3. **Saving Picture Links and Keywords**: Once logged in, developers can input links to pictures and images and associate them with relevant keywords. Additionally, developers can add notes for further context.
-
-4. **Uploading to Cloudinary**: After saving the picture link and associated data, developers can use the Cloudinary uploader widget to upload the image to their Cloudinary account securely.
+3. **Uploading to Cloudinary**: After saving the picture link and associated data, developers can use the Cloudinary uploader widget to upload the image to their Cloudinary account securely.
 
 ## Installation
 
@@ -78,6 +76,8 @@ The Picture Search Application can be further enhanced with the following featur
 1. **Editing Saved Pictures**: Allow developers to edit the information associated with the saved pictures. This includes the ability to modify keywords, update notes, or change the URL of the saved image. Implementing this feature would provide developers with more flexibility and adaptability in managing their visual resources.
 
 2. **Deleting Saved Pictures**: Implement a feature that allows developers to delete saved pictures from their collection. By providing a convenient way to remove unwanted or outdated images, developers can keep their picture search results more relevant and organized.
+
+3. **Password Protection**: Implement password protection to prevent unauthorized uploads to Cloudinary and ensure data protection & cyber security. 
 
 ## Customization
 

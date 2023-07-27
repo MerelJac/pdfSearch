@@ -59,16 +59,10 @@ function outputData(data) {
     fileLineData.setAttribute('href', entry.fileName);
     fileLineData.textContent = 'Link';
 
-
-
-
-
     const keywordLineData = document.createElement('td');
-    // keywordLine.setAttribute('scope', 'col');
     keywordLineData.textContent = entry.keywords.join(', ');
 
     const notesLineData = document.createElement('td');
-    // notesLine.setAttribute('scope', 'col');
     notesLineData.textContent =  entry.notes;
 
     eachThread.appendChild(keywordLineData);
@@ -76,7 +70,6 @@ function outputData(data) {
     eachThread.appendChild(fileLineData);
 
     resultsSection.appendChild(eachThread)
-
 
 });
 
